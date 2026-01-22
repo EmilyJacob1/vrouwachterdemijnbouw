@@ -45,7 +45,7 @@ button {
 
 /* Startscherm */
 #start {
-  background-image: url('/imgs-audio/horizontaal-illustraties/start-scherm.png');
+  background-image: url('../imgs-audio/horizontaal-illustraties/start-scherm.png');
   background-size: cover;
   background-position: center;
 }
@@ -130,37 +130,37 @@ button {
 }
 
 .horizontal-wrapper .slide:nth-child(2) {
-  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
   width: 95vw;
 }
 
 .horizontal-wrapper .slide:nth-child(3) {
-  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
   width: 130vw;
 }
 
 .horizontal-wrapper .slide:nth-child(4) {
-  background-image: url('/imgs-audio/horizontaal-illustraties/keuken.png');
+  background-image: url('../imgs-audio/horizontaal-illustraties/keuken.png');
   width: 100vw;
 }
 
 .horizontal-wrapper .slide:nth-child(5) {
-  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
   width: 120vw;
 }
 
 .horizontal-wrapper .slide:nth-child(6) {
-  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
   width: 90vw;
 }
 
 .horizontal-wrapper .slide:nth-child(7) {
-  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
   width: 135vw;
 }
 
 .horizontal-wrapper .slide:nth-child(8) {
-  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
   width: 100vw;
 }
 
