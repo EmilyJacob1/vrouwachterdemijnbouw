@@ -1,3 +1,25 @@
+// Swipe icon timer
+let swipeIconTimer = null;
+
+// Show swipe icon for 4 seconds
+function showSwipeIcon() {
+    const swipeIcon = document.getElementById('swipeIcon');
+    if (!swipeIcon) return;
+    
+    // Clear any existing timer
+    if (swipeIconTimer) {
+        clearTimeout(swipeIconTimer);
+    }
+    
+    // Show the icon
+    swipeIcon.classList.add('show');
+    
+    // Hide it after 4 seconds
+    swipeIconTimer = setTimeout(() => {
+        swipeIcon.classList.remove('show');
+    }, 4000);
+}
+
 // Wisselen tussen de secties (Start -> Video -> Scrolly)
 function showSection(id) {
     // Verberg alle pagina's
@@ -56,6 +78,9 @@ function showSection(id) {
 
         // klein timeout zodat DOM/layout klaar is
         setTimeout(() => updateActiveDot(), 50);
+        
+        // Show swipe icon when scrolly page starts
+        showSwipeIcon();
     }
 }
 
@@ -194,6 +219,8 @@ function setActiveDot(index) {
 })();
 
 // Modal functionality
+let modalSwipeIconTimer = null;
+
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -207,6 +234,20 @@ function openModal(modalId) {
         // Add 'show' class to trigger the transition
         requestAnimationFrame(() => {
             modal.classList.add('show');
+            
+            // Show swipe icon and hide it after 3 seconds
+            const swipeIcon = modal.querySelector('.modal-swipe-icon');
+            if (swipeIcon) {
+                // Clear any existing timer
+                if (modalSwipeIconTimer) {
+                    clearTimeout(modalSwipeIconTimer);
+                }
+                
+                // Hide icon after 3 seconds
+                modalSwipeIconTimer = setTimeout(() => {
+                    swipeIcon.style.opacity = '0';
+                }, 3000);
+            }
         });
     }
 }
@@ -214,6 +255,11 @@ function openModal(modalId) {
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
+        // Clear swipe icon timer when closing
+        if (modalSwipeIconTimer) {
+            clearTimeout(modalSwipeIconTimer);
+        }
+        
         // Remove show class to trigger closing animation
         modal.classList.remove('show');
         

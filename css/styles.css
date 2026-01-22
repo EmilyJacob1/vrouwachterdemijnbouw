@@ -222,6 +222,23 @@ button {
   mix-blend-mode: multiply;
 }
 
+/* Swipe Icon */
+.swipe-icon {
+  position: fixed;
+  bottom: 7rem;
+  left: 7rem;
+  width: 7rem;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 150;
+}
+
+.swipe-icon.show {
+  opacity: 1;
+}
+
 /* Navigatie */
 .bottom-nav {
   position: fixed;
@@ -390,6 +407,23 @@ button {
   transform: scale(0.9);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-swipe-icon {
+  position: absolute;
+  left: -8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7rem;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.modal.show .modal-swipe-icon {
+  opacity: 1;
 }
 
 .modal.show .modal-content {
