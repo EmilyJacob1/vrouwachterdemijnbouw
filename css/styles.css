@@ -13,7 +13,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff9f5;
+  background-color: white;
   color: #111;
   overflow: hidden;
   /* Voorkomt normale scrollbars */
@@ -120,53 +120,53 @@ button {
   padding: 50px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  /*background-size: cover;*/
 }
 
 /* Plaatshouders per sectie: vervang url() door eigen illustraties en pas breedtes aan per slide */
 .horizontal-wrapper .slide:nth-child(1) {
-  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
-  width: 115vw;
+  background-image: url('../imgs-audio/horizontaal-illustraties/hz-1.png');
+
 }
 
 .horizontal-wrapper .slide:nth-child(2) {
-  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
-  width: 95vw;
+  background-image: url('../imgs-audio/horizontaal-illustraties/hz-2.png');
+
 }
 
 .horizontal-wrapper .slide:nth-child(3) {
-  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
-  width: 130vw;
+  background-image: url('../imgs-audio/horizontaal-illustraties/hz-3.png');
+
 }
 
 .horizontal-wrapper .slide:nth-child(4) {
-  background-image: url('../imgs-audio/horizontaal-illustraties/keuken.png');
-  width: 100vw;
+  background-image: url('../imgs-audio/horizontaal-illustraties/hz-4.png');
+
 }
 
 .horizontal-wrapper .slide:nth-child(5) {
-  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
-  width: 120vw;
+  background-image: url('../imgs-audio/horizontaal-illustraties/hz-5.png');
+
 }
 
 .horizontal-wrapper .slide:nth-child(6) {
-  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
-  width: 90vw;
+  background-image: url('../imgs-audio/horizontaal-illustraties/hz-6.png');
+
 }
 
 .horizontal-wrapper .slide:nth-child(7) {
-  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
-  width: 135vw;
+  background-image: url('../imgs-audio/horizontaal-illustraties/hz-7.png');
+
 }
 
 .horizontal-wrapper .slide:nth-child(8) {
-  background-image: url('../imgs-audio/horizontaal-illustraties/placeholder.png');
+  background-image: url('../imgs-audio/horizontaal-illustraties/hz-8.png');
   width: 100vw;
 }
 
 .horizontal-wrapper .slide:nth-child(9) {
   background: #ffffff;
-  width: 50vw;
+
 }
 
 .slide .content {
