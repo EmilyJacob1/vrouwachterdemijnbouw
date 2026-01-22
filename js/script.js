@@ -17,7 +17,7 @@ function showSwipeIcon() {
     // Hide it after 4 seconds
     swipeIconTimer = setTimeout(() => {
         swipeIcon.classList.remove('show');
-    }, 4000);
+    }, 3000);
 }
 
 // Wisselen tussen de secties (Start -> Video -> Scrolly)

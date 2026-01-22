@@ -120,7 +120,7 @@ button {
   padding: 50px;
   background-repeat: no-repeat;
   background-position: center;
-    background-size: 78%;
+  background-size: 78%;
 }
 
 /* Plaatshouders per sectie: vervang url() door eigen illustraties en pas breedtes aan per slide */
@@ -309,17 +309,17 @@ button {
 
 /* Glowing Button */
 .glow-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid #111;
-    background: #ffd9d1;
-    cursor: pointer;
-    box-shadow: none;
-    transition: all 0.2s ease;
-    animation: button-pulse 1.2s ease-in-out infinite;
-    margin-right: 52rem;
-    margin-top: 5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #111;
+  background: #ffd9d1;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.2s ease;
+  animation: button-pulse 1.2s ease-in-out infinite;
+  margin-right: 52rem;
+  margin-top: 5rem;
 }
 
 .glow-button:hover {
@@ -442,8 +442,8 @@ button {
   color: #ffa7a7;
   z-index: 1001;
   transition: 0.2s ease;
-  width: 59px;
-  height: 59px;
+  width: 50px;
+  height: 50px;
   border-radius: 12px;
   display: flex;
   align-items: center;
