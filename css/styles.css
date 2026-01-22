@@ -1,0 +1,566 @@
+@font-face {
+  font-family: 'Lekton';
+  src: url('../fonts/Lekton-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff9f5;
+  color: #111;
+  overflow: hidden;
+  /* Voorkomt normale scrollbars */
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.9;
+}
+
+p,
+button {
+  font-family: 'Lekton', monospace;
+}
+
+/* Pagina instellingen */
+.page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Startscherm */
+#start {
+  background-image: url('/imgs-audio/horizontaal-illustraties/start-scherm.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Startscherm centering */
+.intro-content {
+  text-align: center;
+}
+
+.intro-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.nav-buttons button {
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #111;
+  color: #111;
+  margin: 35px;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+
+.nav-buttons button:hover {
+  background: #ffd9d1;
+  /* zelfde kleur als actieve dot */
+  border-color: #ffd9d1;
+}
+
+/* Skip button styling */
+.skip-btn {
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #111;
+  color: #111;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+
+.skip-btn:hover {
+  background: #ffd9d1;
+  border-color: #ffd9d1;
+}
+
+
+.horizontal-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  /* Zorgt dat ze echt naast elkaar blijven staan */
+  width: auto;
+  /* past zich aan variabele slide-breedtes aan */
+  height: 100vh;
+  overflow-x: hidden;
+  /* JS regelt het scrollen via het muiswiel */
+}
+
+
+.slide {
+  flex-shrink: 0;
+  /* CRUCIAAL: voorkomt dat slides smaller worden dan 100vw */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Plaatshouders per sectie: vervang url() door eigen illustraties en pas breedtes aan per slide */
+.horizontal-wrapper .slide:nth-child(1) {
+  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  width: 115vw;
+}
+
+.horizontal-wrapper .slide:nth-child(2) {
+  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  width: 95vw;
+}
+
+.horizontal-wrapper .slide:nth-child(3) {
+  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  width: 130vw;
+}
+
+.horizontal-wrapper .slide:nth-child(4) {
+  background-image: url('/imgs-audio/horizontaal-illustraties/keuken.png');
+  width: 100vw;
+}
+
+.horizontal-wrapper .slide:nth-child(5) {
+  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  width: 120vw;
+}
+
+.horizontal-wrapper .slide:nth-child(6) {
+  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  width: 90vw;
+}
+
+.horizontal-wrapper .slide:nth-child(7) {
+  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  width: 135vw;
+}
+
+.horizontal-wrapper .slide:nth-child(8) {
+  background-image: url('/imgs-audio/horizontaal-illustraties/placeholder.png');
+  width: 100vw;
+}
+
+.horizontal-wrapper .slide:nth-child(9) {
+  background: #ffffff;
+  width: 50vw;
+}
+
+.slide .content {
+  max-width: 600px;
+  text-align: center;
+  color: #111;
+  /* zwarte tekst */
+  position: relative;
+  z-index: 50;
+}
+
+.title-image {
+  max-width: 60rem;
+}
+
+.return-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.return-button {
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #111;
+  color: #111;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+
+.return-button:hover {
+  background: #ffd9d1;
+  border-color: #ffd9d1;
+}
+
+/* Paper texture overlay for scrollytelling */
+.paper-texture-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../imgs-audio/paper-texture.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+}
+
+/* Navigatie */
+.bottom-nav {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  background: rgba(0, 0, 0, 0.04);
+  /* subtiel licht */
+  padding: 20px 40px;
+  border-radius: 50px;
+  backdrop-filter: blur(6px);
+  z-index: 200;
+  border: 1px solid black;
+}
+
+.bottom-nav .dot {
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  /* standaard wit */
+  border: 1px solid #e0d7d3;
+  /* subtiele rand op licht achtergrond */
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  border: 1px solid black;
+}
+
+.bottom-nav .dot:hover {
+  transform: scale(2.4);
+  background: #ffd9d1;
+  /* kleur bij hover */
+  box-shadow: 0 0 10px rgba(255, 217, 209, 0.5);
+}
+
+.bottom-nav .dot.active {
+  background: #ffd9d1 !important;
+  /* actieve kleur */
+  transform: scale(2.1);
+  box-shadow: 0 0 12px rgba(255, 217, 209, 0.6);
+}
+
+/* Labels: donker op lichte achtergrond, zichtbaar alleen bij hover op niet-actieve dots */
+.bottom-nav .dot::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  font-size: 12px;
+  color: #111;
+  white-space: nowrap;
+  transition: 0.18s;
+  pointer-events: none;
+}
+
+.bottom-nav .dot:not(.active):hover::after {
+  opacity: 1;
+}
+
+.bottom-nav .dot.active::after {
+  opacity: 0 !important;
+}
+
+/* Glowing Button */
+.glow-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #111;
+  background: #ffd9d1;
+  cursor: pointer;
+  margin-top: 40px;
+  box-shadow: none;
+  transition: all 0.2s ease;
+  animation: button-pulse 1.2s ease-in-out infinite;
+}
+
+.glow-button:hover {
+  animation: button-pulse 0.8s ease-in-out infinite;
+}
+
+.glow-button:active {
+  animation: none;
+  transform: scale(0.92);
+}
+
+@keyframes button-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 217, 209, 0.7);
+  }
+
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 15px rgba(255, 217, 209, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 217, 209, 0);
+  }
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none !important;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.modal-content {
+  position: relative;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7)), url('../imgs-audio/paper-texture.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  width: 98%;
+  max-width: 80%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e6e6e6;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: 6px solid #f9abab;
+  font-size: 29px;
+  cursor: pointer;
+  color: #ffa7a7;
+  z-index: 1001;
+  transition: 0.2s ease;
+  width: 59px;
+  height: 59px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-weight: bold;
+  margin-right: 1.7rem;
+  margin-top: 1.7rem;
+}
+
+.modal-close:hover {
+  background: #ffc4b8;
+}
+
+.modal-bottom-close-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.modal-close-bottom {
+  position: relative;
+  top: auto;
+  right: auto;
+  margin: 0;
+}
+
+.modal-body {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-body h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.modal-body p {
+  font-size: 1.4rem;
+  line-height: 1.9;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.modal-body h4 {
+  font-size: 1.2rem;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.modal-body .highlight-box {
+  background: #ffd9d1;
+  padding: 25px;
+  border-radius: 8px;
+  margin: 25px 0;
+  border-left: 4px solid #ffb3a3;
+}
+
+.modal-body .highlight-box p {
+  margin-bottom: 10px;
+  color: #222;
+  font-weight: 500;
+}
+
+.modal-body .chart-info {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.modal-body .stat {
+  display: inline-block;
+  margin: 0 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+}
+
+/* Scrollbar styling for modal */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #ffd9d1;
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: #ffb3a3;
+}
+
+/* Modal image styles */
+.modal-hero-image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.modal-content-image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Image with text overlay container */
+.modal-image-with-overlay {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.modal-image-with-overlay img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-image-text-overlay-top-right {
+  position: absolute;
+  top: 8rem;
+  right: 11rem;
+  background: rgba(255, 200, 190);
+  width: 38rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+  padding: 3rem;
+}
+
+
+/* Modal layout containers */
+.modal-two-column {
+  display: flex;
+  gap: 7%;
+  margin-bottom: 30px;
+  align-items: center;
+  padding: 11% 12%;
+}
+
+.modal-column {
+  flex: 1;
+}
+
+.modal-text-meta {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.modal-text-main {
+  margin-top: 20px;
+}
+
+/* Modal image-text combination (image left, text box right) */
+.modal-image-text-row {
+  display: flex;
+  gap: 20px;
+  margin: 25px 0;
+  align-items: flex-start;
+}
+
+.modal-side-image {
+  width: 45%;
+  border-radius: 8px;
+  object-fit: cover;
+}

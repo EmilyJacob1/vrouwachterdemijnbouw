@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Vrouw achter de Mijn</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <section id="start" class="page">
+        <div class="intro-content">
+            <img src="/imgs-audio/horizontaal-illustraties/titel.png" alt="Titel" class="title-image">
+            <div class="nav-buttons">
+                <button onclick="showSection('video-page')">Bekijk Intro Video</button>
+                <button onclick="showSection('scrolly-page')">Direct naar Verhaal</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated video page: use Vimeo iframe so we can listen for ended and control fullscreen -->
+    <section id="video-page" class="page hidden">
+        <div class="video-container" id="videoContainer"
+            style="width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#000;position:relative;">
+            <!-- Test Vimeo video (id: 76979871). Removed autoplay from URL - will be controlled by JS when user watches intro. -->
+            <iframe id="vimeoPlayer" src="https://player.vimeo.com/video/76979871?muted=1&playsinline=1" width="100%"
+                height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <button class="skip-btn" onclick="showSection('scrolly-page')"
+                style="position:absolute;top:20px;right:20px;z-index:10;">Skip →</button>
+        </div>
+    </section>
+
+    <section id="scrolly-page" class="page hidden">
+        <div class="paper-texture-overlay"></div>
+        <div class="horizontal-wrapper" id="scrollContainer">
+
+            <div class="slide slide-intro">
+                <div class="content">
+                </div>
+            </div>
+
+            <div class="slide slide-was">
+                <div class="content">
+                </div>
+            </div>
+
+            <div class="slide slide-angst">
+                <div class="content">
+                    <button class="glow-button" onclick="openModal('modal-one')"></button>
+                </div>
+            </div>
+
+            <div class="slide slide-intro">
+                <div class="content">
+                </div>
+            </div>
+
+            <div class="slide slide-was">
+                <div class="content">
+                </div>
+            </div>
+
+            <div class="slide slide-angst">
+                <div class="content">
+                </div>
+            </div>
+
+            <div class="slide slide-kolonie">
+                <div class="content">
+                </div>
+            </div>
+
+            <div class="slide slide-kolonie">
+                <div class="content">
+                </div>
+            </div>
+
+            <div class="slide slide-return">
+                <div class="content return-content">
+                    <button class="return-button" onclick="resetToStart()">Terug naar start</button>
+                </div>
+            </div>
+
+        </div>
+
+        <nav class="bottom-nav">
+            <div class="dot" onclick="navTo(0)" data-label="Stein"></div>
+            <div class="dot" onclick="navTo(1)" data-label="Het afscheid"></div>
+            <div class="dot" onclick="navTo(2)" data-label="Gezin"></div>
+            <div class="dot" onclick="navTo(3)" data-label="Onzichtbaar werk"></div>
+            <div class="dot" onclick="navTo(4)" data-label="Het gezin draait mee"></div>
+            <div class="dot" onclick="navTo(5)" data-label="Hoop en toekomst"></div>
+            <div class="dot" onclick="navTo(6)" data-label="Nieuws"></div>
+            <div class="dot" onclick="navTo(7)" data-label="Het einde van een tijdperk"></div>
+        </nav>
+    </section>
+
+    <!-- Modal 1 -->
+    <div id="modal-one" class="modal hidden">
+        <div class="modal-overlay" onclick="closeModal('modal-one')"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-one')">✕</button>
+            <div class="modal-body">
+                <!-- Full-width top image -->
+                <img src="/imgs-audio/vrdieping-gang/1.1.png" alt="Mijnkolonie gezin" class="modal-hero-image">
+
+                <!-- Text left, image right layout -->
+                <div class="modal-two-column">
+                    <div class="modal-column">
+
+                        <p class="modal-text-main">Door de mijnbouw groeide de bevolking in Zuid-Limburg sterk. Veel
+                            mijnwerkers kwamen met hun gezin naar de streek, waardoor het aantal inwoners tussen 1900 en
+                            1965 steeg van ongeveer 23.000 naar ruim 236.000.</p>
+                    </div>
+                    <div class="modal-column">
+                        <img src="/imgs-audio/vrdieping-gang/1.2.png" alt="Bevolkingsgroei grafiek"
+                            class="modal-content-image">
+                    </div>
+                </div>
+
+                <!-- Full-width middle image with text overlay -->
+                <div class="modal-image-with-overlay">
+                    <img src="/imgs-audio/vrdieping-gang/1.3.png" alt="Mijnkolonie gezin">
+                    <div class="modal-image-text-overlay-top-right">
+                        <p>In de jaren 1950 was Nederland nog grotendeels een christelijk land. Rond die tijd was ongeveer 38 % van de bevolking rooms-katholiek, in veel gezinnen was het katholieke geloof een belangrijk onderdeel van dagelijks leven.</p>
+                    </div>
+                </div>
+
+                <!-- Text left, image right layout -->
+                <div class="modal-two-column">
+                    <div class="modal-column">
+
+                        <p class="modal-text-main">Meer dan 70% van de kinderen in Nederland werden thuis geboren. Thuisbevallingen waren heel gewoon, dit gebeurde vaak samen met een vroedvrouw aan huis. ziekenhuisbevallingen waren nog minder gebruikelijk, alleen vrouwen met complicaties gingen naar het ziekenhuis.
+                    </div>
+                    <div class="modal-column">
+                        <img src="/imgs-audio/vrdieping-gang/1.4.png" alt="Bevolkingsgroei grafiek"
+                            class="modal-content-image">
+                    </div>
+                </div>
+                <!-- Full-width middle image -->
+                <img src="/imgs-audio/vrdieping-gang/1.5.png" alt="Mijnkolonie gezin" class="modal-hero-image">
+                
+                <!-- Bottom close button -->
+                <div class="modal-bottom-close-container">
+                    <button class="modal-close modal-close-bottom" onclick="closeModal('modal-one')">✕</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Vimeo Player API so we can listen for events -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
