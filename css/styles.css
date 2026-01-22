@@ -170,7 +170,6 @@ button {
 }
 
 .slide .content {
-  max-width: 600px;
   text-align: center;
   color: #111;
   /* zwarte tekst */
@@ -293,16 +292,17 @@ button {
 
 /* Glowing Button */
 .glow-button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid #111;
-  background: #ffd9d1;
-  cursor: pointer;
-  margin-top: 40px;
-  box-shadow: none;
-  transition: all 0.2s ease;
-  animation: button-pulse 1.2s ease-in-out infinite;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #111;
+    background: #ffd9d1;
+    cursor: pointer;
+    box-shadow: none;
+    transition: all 0.2s ease;
+    animation: button-pulse 1.2s ease-in-out infinite;
+    margin-right: 52rem;
+    margin-top: 5rem;
 }
 
 .glow-button:hover {
