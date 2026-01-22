@@ -120,7 +120,7 @@ button {
   padding: 50px;
   background-repeat: no-repeat;
   background-position: center;
-  /*background-size: cover;*/
+    background-size: 78%;
 }
 
 /* Plaatshouders per sectie: vervang url() door eigen illustraties en pas breedtes aan per slide */
