@@ -31,6 +31,13 @@ function showSection(id) {
         }
     }
 
+    // Pauzeer Vimeo video als we niet op de videopagina zijn
+    if (id !== 'video-page' && window.vimeoPlayer) {
+        window.vimeoPlayer.pause().catch(() => {
+            // ignore if pause fails
+        });
+    }
+
     // Exit fullscreen whenever we switch to the scrollytelling
     if (id === 'scrolly-page') {
         try {
@@ -67,8 +74,10 @@ window.addEventListener("wheel", (evt) => {
     // Alleen horizontaal scrollen als de scrollytelling-pagina actief is
     if (!scrollyPage.classList.contains('hidden')) {
         evt.preventDefault();
-        // De 'deltaY' (verticaal scrollen) voegen we toe aan 'scrollLeft' (horizontaal)
-        document.getElementById('scrollContainer').scrollLeft += evt.deltaY;
+        // Beide verticaal (deltaY) en horizontaal (deltaX) omzetten naar horizontaal scrollen
+        // Dit ondersteunt zowel muiswiel als trackpad swipes
+        const scrollAmount = evt.deltaY + evt.deltaX;
+        document.getElementById('scrollContainer').scrollLeft += scrollAmount;
     }
 }, { passive: false });
 
@@ -188,16 +197,31 @@ function setActiveDot(index) {
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
+        // Remove hidden class to make modal visible but still at opacity 0
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
+        
+        // Force a reflow to ensure the transition happens
+        void modal.offsetWidth;
+        
+        // Add 'show' class to trigger the transition
+        requestAnimationFrame(() => {
+            modal.classList.add('show');
+        });
     }
 }
 
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
-        modal.classList.add('hidden');
-        document.body.style.overflow = 'hidden';
+        // Remove show class to trigger closing animation
+        modal.classList.remove('show');
+        
+        // Wait for transition to complete before adding hidden class
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'hidden';
+        }, 300); // Match the CSS transition duration
     }
 }
 
@@ -205,7 +229,7 @@ function closeModal(modalId) {
 document.addEventListener('keydown', (evt) => {
     if (evt.key === 'Escape') {
         document.querySelectorAll('.modal:not(.hidden)').forEach(modal => {
-            modal.classList.add('hidden');
+            closeModal(modal.id);
         });
     }
 });
