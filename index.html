@@ -55,8 +55,7 @@
             </div>
 
             <div class="slide slide-keuken">
-                <div class="content">
-                </div>
+                <button class="glow-button glow-button-green-keuken" onclick="openModal('modal-four')"></button>
             </div>
 
             <div class="slide slide-was">
@@ -294,6 +293,51 @@ stimuleren en te ondersteunen op school.</p>
     <!-- Audio element for zusjes-lied -->
     <audio id="zusjes-lied" src="imgs-audio/horizontaal-illustraties/zusjes-lied.mp3"></audio>
 
+    <!-- Modal 4 (Keuken) -->
+    <div id="modal-four" class="modal hidden">
+        <div class="modal-overlay" onclick="closeModal('modal-four')"></div>
+        <div class="modal-content">
+            <img class="modal-swipe-icon" src="imgs-audio/swipe-vt.png" alt="Swipe to scroll">
+            <button class="modal-close" onclick="closeModal('modal-four')">✕</button>
+            <div class="modal-body">
+                <!-- Text overlay positioned over first image -->
+                <div class="modal-image-with-overlay">
+                    <div class="modal-image-text-overlay-bottom-left">
+                        <p>De keuken was het centrum van het huishouden waar al het eten werd bereid. Het was een plek van hard werk, creativiteit en verzorging voor het gezin.</p>
+                    </div>
+                    <!-- Full-width top image -->
+                    <img src="imgs-audio/vrdieping-keuken/k1.png" alt="Keuken" class="modal-hero-image">
+                </div>
+
+                <!-- Text left, image right layout -->
+                <div class="modal-two-column">
+                    <div class="modal-column">
+                        <p class="modal-text-main bold">De keuken</p>
+                        <p class="modal-text-main">In de keuken werden maaltijden bereid voor het hele gezin. Het koken was een dagelijkse taak die veel tijd in beslag nam, vooral omdat mijnwerkers verschillende diensten hadden.</p>
+                    </div>
+                    <div class="modal-column">
+                        <img src="imgs-audio/vrdieping-keuken/k2.png" alt="Keuken detail" class="modal-content-image">
+                    </div>
+                </div>
+
+                <!-- Video with play button -->
+                <div class="modal-video-section">
+                    <div class="modal-video-container" id="keukenVideoContainer">
+                        <iframe id="keukenVideo" src="https://player.vimeo.com/video/76979871?muted=0&controls=false" width="100%"
+                            height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen style="display:none;"></iframe>
+                        <button class="modal-video-play-button" onclick="playModalVideo('keukenVideo', 'keukenVideoContainer')">▶</button>
+                    </div>
+                </div>
+
+                <!-- Bottom close button -->
+                <div class="modal-bottom-close-container">
+                    <button class="modal-close modal-close-bottom" onclick="closeModal('modal-four')">✕</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Video -->
     <div id="modal-video" class="modal modal-video hidden">
         <div class="modal-overlay" onclick="closeVideoModal('modal-video')"></div>
@@ -311,6 +355,7 @@ stimuleren en te ondersteunen op school.</p>
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="js/script.js"></script>
     <script src="js/audio.js"></script>
+    <script src="js/modal-video.js"></script>
 </body>
 
 </html>

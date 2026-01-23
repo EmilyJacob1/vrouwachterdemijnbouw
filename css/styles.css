@@ -99,6 +99,66 @@ button {
   border-color: #ffd9d1;
 }
 
+/* Green button variant for slide-keuken */
+.glow-button-green-keuken {
+  background: #A2E6C6;
+  animation: button-pulse-green 1.2s ease-in-out infinite;
+  margin-right: 55rem;
+  margin-top: 12rem;
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+
+.glow-button-green-keuken:hover {
+  animation: button-pulse-green 0.8s ease-in-out infinite;
+  background: white;
+}
+
+/* Modal video section styles */
+.modal-video-section {
+  margin: 30px 0;
+  padding: 0;
+}
+
+.modal-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #bfbfbf; /* placeholder before play */
+}
+
+.modal-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-video-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid white;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-video-play-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, -50%) scale(1.1);
+}
 
 .horizontal-wrapper {
   display: flex;

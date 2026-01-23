@@ -259,6 +259,14 @@ function closeModal(modalId) {
         if (modalSwipeIconTimer) {
             clearTimeout(modalSwipeIconTimer);
         }
+
+        // Pause and reset any Vimeo iframe inside this modal (e.g., keuken video)
+        const vimeoFrame = modal.querySelector('iframe');
+        if (vimeoFrame && vimeoFrame.src && vimeoFrame.src.includes('vimeo.com')) {
+            const vimeoPlayer = new Vimeo.Player(vimeoFrame);
+            vimeoPlayer.pause().catch(() => {});
+            vimeoPlayer.setCurrentTime(0).catch(() => {});
+        }
         
         // Remove show class to trigger closing animation
         modal.classList.remove('show');
