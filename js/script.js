@@ -14,10 +14,10 @@ function showSwipeIcon() {
     // Show the icon
     swipeIcon.classList.add('show');
     
-    // Hide it after 4 seconds
+    // Hide it after 2 seconds
     swipeIconTimer = setTimeout(() => {
         swipeIcon.classList.remove('show');
-    }, 3000);
+    }, 2000);
 }
 
 // Wisselen tussen de secties (Start -> Video -> Scrolly)
@@ -246,7 +246,7 @@ function openModal(modalId) {
                 // Hide icon after 3 seconds
                 modalSwipeIconTimer = setTimeout(() => {
                     swipeIcon.style.opacity = '0';
-                }, 3000);
+                }, 2000);
             }
         });
     }

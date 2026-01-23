@@ -337,10 +337,12 @@ button {
   animation: button-pulse 1.2s ease-in-out infinite;
   margin-right: 52rem;
   margin-top: 5rem;
+  transition: background-color 0.3s ease;
 }
 
 .glow-button-pink:hover {
   animation: button-pulse 0.8s ease-in-out infinite;
+  background: white;
 }
 
 /* Pink button variant for slide-was */
@@ -349,10 +351,12 @@ button {
   animation: button-pulse 1.2s ease-in-out infinite;
   margin-right: 53rem;
   margin-top: 8rem;
+  transition: background-color 0.3s ease;
 }
 
 .glow-button-pink-was:hover {
   animation: button-pulse 0.8s ease-in-out infinite;
+  background: white;
 }
 
 @keyframes button-pulse {
@@ -378,10 +382,12 @@ button {
   animation: button-pulse-green 1.2s ease-in-out infinite;
   margin-right: 4rem;
   margin-top: -2rem;
+  transition: background-color 0.3s ease;
 }
 
 .glow-button-green:hover {
   animation: button-pulse-green 0.8s ease-in-out infinite;
+  background: white;
 }
 
 @keyframes button-pulse-green {
