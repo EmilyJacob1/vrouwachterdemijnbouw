@@ -3,10 +3,10 @@
 const AudioManager = {
     // Map of slide index to background audio file
     backgroundAudioMap: {
-        1: '../imgs-audio/horizontaal-illustraties/vogels.mp3',
-        3: '../imgs-audio/horizontaal-illustraties/fabrieksgeluiden.mp3',
-        4: '../imgs-audio/horizontaal-illustraties/kinderen.mp3',
-        7: '../imgs-audio/horizontaal-illustraties/vogels.mp3'
+1: 'imgs-audio/horizontaal-illustraties/vogels.mp3',
+    3: 'imgs-audio/horizontaal-illustraties/fabrieksgeluiden.mp3',
+    4: 'imgs-audio/horizontaal-illustraties/kinderen.mp3',
+    7: 'imgs-audio/horizontaal-illustraties/vogels.mp3'
     },
 
     // Current background audio element
