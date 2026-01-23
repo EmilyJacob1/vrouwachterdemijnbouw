@@ -33,6 +33,7 @@ button {
   font-family: 'Lekton', monospace;
 }
 
+
 /* Pagina instellingen */
 .page {
   height: 100vh;
@@ -465,6 +466,20 @@ button {
 .glow-button-green-studeerkamer:hover {
   animation: button-pulse-green 0.8s ease-in-out infinite;
   background: white;
+}
+
+/* Music notes GIF animation */
+.music-notes-animation {
+position: absolute;
+    top: 43%;
+    left: 57%;
+    pointer-events: none;
+    z-index: 101;
+    max-width: 8rem;
+    height: auto;
+    margin-left: -12rem;
+    margin-top: -7rem;
+    rotate: -10deg;
 }
 
 /* Pink button variant for slide-studeerkamer */

@@ -170,14 +170,17 @@ function toggleAudio(audioId) {
     }
 
     // Toggle current audio
+    const musicNotesGif = document.getElementById('music-notes-gif');
     if (audioElement.paused) {
         audioElement.play().catch(() => {
             console.log('Could not play audio');
         });
         currentAudioId = audioId;
+        if (musicNotesGif) musicNotesGif.style.display = 'block';
     } else {
         audioElement.pause();
         currentAudioId = null;
+        if (musicNotesGif) musicNotesGif.style.display = 'none';
     }
 }
 
@@ -190,4 +193,8 @@ function stopAllAudio() {
         }
     });
     currentAudioId = null;
+    
+    // Hide music notes GIF
+    const musicNotesGif = document.getElementById('music-notes-gif');
+    if (musicNotesGif) musicNotesGif.style.display = 'none';
 }
