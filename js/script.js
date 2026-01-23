@@ -275,7 +275,58 @@ function closeModal(modalId) {
 document.addEventListener('keydown', (evt) => {
     if (evt.key === 'Escape') {
         document.querySelectorAll('.modal:not(.hidden)').forEach(modal => {
-            closeModal(modal.id);
+            if (modal.classList.contains('modal-video')) {
+                closeVideoModal(modal.id);
+            } else {
+                closeModal(modal.id);
+            }
         });
     }
 });
+
+// Video Modal functionality
+let kolonieVideoPlayer = null;
+
+function openVideoModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        void modal.offsetWidth;
+        
+        requestAnimationFrame(() => {
+            modal.classList.add('show');
+            
+            // Initialize and play video
+            if (!kolonieVideoPlayer) {
+                const iframe = document.getElementById('kolonieVideo');
+                kolonieVideoPlayer = new Vimeo.Player(iframe);
+            }
+            
+            // Play the video
+            kolonieVideoPlayer.play().catch(() => {
+                console.log('Video autoplay may be blocked');
+            });
+        });
+    }
+}
+
+function closeVideoModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        // Pause the video when closing
+        if (kolonieVideoPlayer) {
+            kolonieVideoPlayer.pause().catch(() => {
+                console.log('Could not pause video');
+            });
+        }
+        
+        modal.classList.remove('show');
+        
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'hidden';
+        }, 300);
+    }
+}

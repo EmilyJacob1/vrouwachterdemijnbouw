@@ -311,19 +311,15 @@ button {
   opacity: 0 !important;
 }
 
-/* Glowing Button */
+/* Glowing Button - Base styles */
 .glow-button {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   border: 2px solid #111;
-  background: #ffd9d1;
   cursor: pointer;
   box-shadow: none;
   transition: all 0.2s ease;
-  animation: button-pulse 1.2s ease-in-out infinite;
-  margin-right: 52rem;
-  margin-top: 5rem;
 }
 
 .glow-button:hover {
@@ -333,6 +329,18 @@ button {
 .glow-button:active {
   animation: none;
   transform: scale(0.92);
+}
+
+/* Pink button variant */
+.glow-button-pink {
+  background: #ffd9d1;
+  animation: button-pulse 1.2s ease-in-out infinite;
+  margin-right: 52rem;
+  margin-top: 5rem;
+}
+
+.glow-button-pink:hover {
+  animation: button-pulse 0.8s ease-in-out infinite;
 }
 
 @keyframes button-pulse {
@@ -349,6 +357,35 @@ button {
   100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(255, 217, 209, 0);
+  }
+}
+
+/* Green button variant */
+.glow-button-green {
+  background: #A2E6C6;
+  animation: button-pulse-green 1.2s ease-in-out infinite;
+  margin-right: 4rem;
+  margin-top: -2rem;
+}
+
+.glow-button-green:hover {
+  animation: button-pulse-green 0.8s ease-in-out infinite;
+}
+
+@keyframes button-pulse-green {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(162, 230, 198, 0.7);
+  }
+
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 15px rgba(162, 230, 198, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(162, 230, 198, 0);
   }
 }
 
@@ -377,6 +414,33 @@ button {
 
 .modal.hidden {
   display: none;
+}
+
+/* Video Modal */
+.modal-video .modal-video-content {
+    position: relative;
+    height: 80vh;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1001;
+    width: 98%;
+    max-width: 80%;
+    max-height: 100vh;
+}
+
+.modal-video-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.modal-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .modal-overlay {

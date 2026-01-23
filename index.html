@@ -50,7 +50,7 @@
 
             <div class="slide slide-angst">
                 <div class="content">
-                    <button class="glow-button" onclick="openModal('modal-one')"></button>
+                    <button class="glow-button glow-button-pink" onclick="openModal('modal-one')"></button>
                 </div>
             </div>
 
@@ -71,6 +71,7 @@
 
             <div class="slide slide-kolonie">
                 <div class="content">
+                    <button class="glow-button glow-button-green" onclick="openVideoModal('modal-video')"></button>
                 </div>
             </div>
 
@@ -99,7 +100,7 @@
         </nav>
     </section>
 
-    <!-- Modal 1 -->
+    <!-- Modal 1 (gang)-->
     <div id="modal-one" class="modal hidden">
         <div class="modal-overlay" onclick="closeModal('modal-one')"></div>
         <div class="modal-content">
@@ -154,6 +155,18 @@
                 <div class="modal-bottom-close-container">
                     <button class="modal-close modal-close-bottom" onclick="closeModal('modal-one')">✕</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Video -->
+    <div id="modal-video" class="modal modal-video hidden">
+        <div class="modal-overlay" onclick="closeVideoModal('modal-video')"></div>
+        <div class="modal-video-content">
+            <button class="modal-close" onclick="closeVideoModal('modal-video')">✕</button>
+            <div class="modal-video-wrapper">
+                <iframe id="kolonieVideo" src="https://player.vimeo.com/video/76979871?muted=0" width="100%"
+                    height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
