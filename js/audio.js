@@ -3,10 +3,10 @@
 const AudioManager = {
     // Map of slide index to background audio file
     backgroundAudioMap: {
-        1: '../imgs-audio/horizontaal-illustraties/vogels.mp3',
-        3: '../imgs-audio/horizontaal-illustraties/fabrieksgeluiden.mp3',
-        4: '../imgs-audio/horizontaal-illustraties/kinderen.mp3',
-        7: '../imgs-audio/horizontaal-illustraties/vogels.mp3'
+        1: 'imgs-audio/horizontaal-illustraties/vogels.mp3',
+        3: 'imgs-audio/horizontaal-illustraties/fabrieksgeluiden.mp3',
+        4: 'imgs-audio/horizontaal-illustraties/kinderen.mp3',
+        7: 'imgs-audio/horizontaal-illustraties/vogels.mp3'
     },
 
     // Current background audio element
@@ -116,13 +116,13 @@ const AudioManager = {
 // Stop background audio when modals open
 (function setupModalAudioHandling() {
     const originalOpenModal = window.openModal;
-    window.openModal = function(modalId) {
+    window.openModal = function (modalId) {
         AudioManager.stopBackgroundAudio();
         originalOpenModal.call(this, modalId);
     };
 
     const originalCloseModal = window.closeModal;
-    window.closeModal = function(modalId) {
+    window.closeModal = function (modalId) {
         originalCloseModal.call(this, modalId);
         // Resume background audio after modal closes
         setTimeout(() => {
@@ -134,7 +134,7 @@ const AudioManager = {
 // Stop background audio when switching sections
 (function setupSectionAudioHandling() {
     const originalShowSection = window.showSection;
-    window.showSection = function(id) {
+    window.showSection = function (id) {
         // Stop background audio when leaving scrolly page
         if (id !== 'scrolly-page') {
             AudioManager.stopBackgroundAudio();

@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            <div class="slide slide-was">
+            <div class="slide slide-x">
                 <div class="content">
                 </div>
             </div>
@@ -61,6 +61,7 @@
 
             <div class="slide slide-was">
                 <div class="content">
+                    <button class="glow-button glow-button-pink-was" onclick="openModal('modal-two')"></button>
                 </div>
             </div>
 
@@ -100,7 +101,7 @@
         </nav>
     </section>
 
-    <!-- Modal 1 (gang)-->
+    <!-- Modal 1 (gang) -->
     <div id="modal-one" class="modal hidden">
         <div class="modal-overlay" onclick="closeModal('modal-one')"></div>
         <div class="modal-content">
@@ -129,7 +130,8 @@
                     <img src="imgs-audio/vrdieping-gang/1.3.png" alt="Mijnkolonie gezin">
                     <div class="modal-image-text-overlay-top-right">
                         <p>In de jaren 1950 was Nederland nog grotendeels een christelijk land. Rond die tijd was
-                            ongeveer <span class="bold">38 % van de bevolking rooms-katholiek</span>, in veel gezinnen was het katholieke geloof
+                            ongeveer <span class="bold">38 % van de bevolking rooms-katholiek</span>, in veel gezinnen
+                            was het katholieke geloof
                             een belangrijk onderdeel van dagelijks leven.</p>
                     </div>
                 </div>
@@ -138,7 +140,8 @@
                 <div class="modal-two-column">
                     <div class="modal-column">
 
-                        <p class="modal-text-main"><span class="bold">Meer dan 70% van de kinderen in Nederland werden thuis geboren.</span>
+                        <p class="modal-text-main"><span class="bold">Meer dan 70% van de kinderen in Nederland werden
+                                thuis geboren.</span>
                             Thuisbevallingen waren heel gewoon, dit gebeurde vaak samen met een vroedvrouw aan huis.
                             ziekenhuisbevallingen waren nog minder gebruikelijk, alleen vrouwen met complicaties gingen
                             naar het ziekenhuis.
@@ -159,6 +162,79 @@
         </div>
     </div>
 
+    <!-- Modal 2 (Eetkamer) -->
+    <div id="modal-two" class="modal hidden">
+        <div class="modal-overlay" onclick="closeModal('modal-two')"></div>
+        <div class="modal-content">
+            <img class="modal-swipe-icon" src="imgs-audio/swipe-vt.png" alt="Swipe to scroll">
+            <button class="modal-close" onclick="closeModal('modal-two')">✕</button>
+            <div class="modal-body">
+                <!-- Text overlay positioned over first image -->
+                <div class="modal-image-with-overlay">
+                    <div class="modal-image-text-overlay-bottom-left">
+                        <p>In de jaren vijftig en zestig draaide het grote gezin volledig mee in het dagelijks leven.
+                            Kinderen hielpen al zodra ze oud genoeg waren ze haalden water, schepten kolen, deden
+                            boodschappen en zorgden voor jongere broers en zussen.</p>
+                    </div>
+                    <!-- Full-width top image -->
+                    <img src="imgs-audio/vrdieping-eetkamer/ek-1.png" alt="Afscheid" class="modal-hero-image">
+                </div>
+
+                <!-- Text left, image right layout -->
+                <div class="modal-two-column">
+                    <div class="modal-column">
+                        <img src="imgs-audio/vrdieping-eetkamer/ek-2.png" alt="Afscheid grafiek"
+                            class="modal-content-image">
+                    </div>
+                    <div class="modal-column">
+                        <p><span class="bold">51% van de Limburgse bevolking bestond uit kinderen</span> en gezinnen
+                            telden gemiddeld drie of meer kinderen. Iedereen droeg zijn steentje bij. Voor veel jongens
+                            lag de toekomst al vroeg vast.</p>
+                    </div>
+
+                </div>
+
+                <!-- Full-width middle image with text overlay -->
+                <div class="modal-image-with-overlay">
+
+                    <div class="modal-image-text-overlay-bottom-left">
+                        <p>Net als hun vaders gingen zij later werken in de mijnen. Rond 1960 werkte <span class="bold">
+                                meer dan 80% van de
+                                mannen </span> in Zuid-Limburg direct of indirect in of rond de mijnen, waardoor het
+                            gezinsleven en
+                            werk sterk met elkaar verweven waren.</p>
+                    </div>
+                    <img src="imgs-audio/vrdieping-eetkamer/ek-3.png" alt="Afscheid familie">
+                </div>
+
+                <!-- Full-width middle image -->
+                <div class="modal-one-column">
+                    <img src="imgs-audio/vrdieping-eetkamer/ek-4.png" alt="Afscheid landschap" class="modal-hero-image">
+                </div>
+                <!-- Text left, image right layout -->
+                <div class="modal-two-column">
+                    <div class="modal-column">
+                        <img src="imgs-audio/vrdieping-eetkamer/ek-5.png" alt="Verhuizing" class="modal-content-image">
+                    </div>
+                    <div class="modal-column">
+                        <p class="modal-text-main">De wisselende werktijden van de mijnwerkers maakten het werk thuis
+                            extra zwaar er moesten meerdere warme maaltijden per dag klaargemaakt worden en er was vaak
+                            extra was en schoonmaakwerk. <span class="bold">Dochters waren een onmisbare rol bij het
+                                draaiende houden van
+                                het gezin.</span></p>
+                    </div>
+
+                </div>
+
+
+                <!-- Bottom close button -->
+                <div class="modal-bottom-close-container">
+                    <button class="modal-close modal-close-bottom" onclick="closeModal('modal-two')">✕</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Video -->
     <div id="modal-video" class="modal modal-video hidden">
         <div class="modal-overlay" onclick="closeVideoModal('modal-video')"></div>
@@ -166,7 +242,8 @@
             <button class="modal-close" onclick="closeVideoModal('modal-video')">✕</button>
             <div class="modal-video-wrapper">
                 <iframe id="kolonieVideo" src="https://player.vimeo.com/video/76979871?muted=0" width="100%"
-                    height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </div>
