@@ -266,6 +266,14 @@ function closeModal(modalId) {
             const vimeoPlayer = new Vimeo.Player(vimeoFrame);
             vimeoPlayer.pause().catch(() => {});
             vimeoPlayer.setCurrentTime(0).catch(() => {});
+
+            // Restore play button state for modal video containers
+            const videoContainer = vimeoFrame.closest('.modal-video-container');
+            if (videoContainer) {
+                const playBtn = videoContainer.querySelector('.modal-video-play-button');
+                if (playBtn) playBtn.style.display = 'block';
+                vimeoFrame.style.display = 'none';
+            }
         }
         
         // Remove show class to trigger closing animation
