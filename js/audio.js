@@ -95,6 +95,8 @@ const AudioManager = {
     container.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
+                // Stop user-triggered audio when scrolling
+                stopAllAudio();
                 AudioManager.updateBackgroundAudio();
                 ticking = false;
             });
@@ -118,6 +120,7 @@ const AudioManager = {
     const originalOpenModal = window.openModal;
     window.openModal = function (modalId) {
         AudioManager.stopBackgroundAudio();
+        stopAllAudio();
         originalOpenModal.call(this, modalId);
     };
 
@@ -138,7 +141,53 @@ const AudioManager = {
         // Stop background audio when leaving scrolly page
         if (id !== 'scrolly-page') {
             AudioManager.stopBackgroundAudio();
+            stopAllAudio();
         }
         originalShowSection.call(this, id);
     };
 })();
+
+// User-triggered audio control functionality
+let currentAudioId = null;
+
+function toggleAudio(audioId) {
+    const audioElement = document.getElementById(audioId);
+    if (!audioElement) {
+        console.log('Audio element not found:', audioId);
+        return;
+    }
+
+    // Stop background audio when playing user audio
+    AudioManager.stopBackgroundAudio();
+
+    // If a different audio is playing, stop it
+    if (currentAudioId && currentAudioId !== audioId) {
+        const previousAudio = document.getElementById(currentAudioId);
+        if (previousAudio) {
+            previousAudio.pause();
+            previousAudio.currentTime = 0;
+        }
+    }
+
+    // Toggle current audio
+    if (audioElement.paused) {
+        audioElement.play().catch(() => {
+            console.log('Could not play audio');
+        });
+        currentAudioId = audioId;
+    } else {
+        audioElement.pause();
+        currentAudioId = null;
+    }
+}
+
+function stopAllAudio() {
+    // Stop all user-triggered audio elements
+    document.querySelectorAll('audio').forEach(audio => {
+        if (!audio.paused) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    });
+    currentAudioId = null;
+}
