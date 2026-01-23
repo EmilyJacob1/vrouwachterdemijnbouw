@@ -24,6 +24,10 @@ p {
   line-height: 1.9;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 p,
 button {
   font-family: 'Lekton', monospace;
@@ -120,7 +124,7 @@ button {
   padding: 50px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 78%;
+    background-size: 82%;
 }
 
 /* Plaatshouders per sectie: vervang url() door eigen illustraties en pas breedtes aan per slide */
@@ -483,7 +487,7 @@ button {
 }
 
 .modal-body p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.9;
   margin-bottom: 15px;
   color: #333;
@@ -556,7 +560,7 @@ button {
 }
 
 .modal-content-image {
-  width: 100%;
+  max-width: 40rem;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -589,10 +593,10 @@ button {
 /* Modal layout containers */
 .modal-two-column {
   display: flex;
-  gap: 7%;
+  gap: 8%;
   margin-bottom: 30px;
   align-items: center;
-  padding: 11% 12%;
+  padding: 11% 10%;
 }
 
 .modal-column {
