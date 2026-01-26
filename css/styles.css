@@ -200,6 +200,17 @@ button {
 
 }
 
+.birds-gif {
+    position: absolute;
+    top: 3%;
+    right: 10%;
+    width: 25rem;
+    height: auto;
+    pointer-events: none;
+    z-index: 5;
+    rotate: 14deg;
+}
+
 .horizontal-wrapper .slide:nth-child(3) {
   background-image: url('../imgs-audio/horizontaal-illustraties/hz-3.png');
 
