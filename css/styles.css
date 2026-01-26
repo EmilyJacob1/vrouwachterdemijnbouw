@@ -226,6 +226,17 @@ button {
 
 }
 
+.klok-gif {
+    position: absolute;
+    top: 16%;
+    left: 52%;
+    width: 9rem;
+    height: auto;
+    transform: translate(-50%, 0);
+    pointer-events: none;
+    z-index: 5;
+}
+
 .horizontal-wrapper .slide:nth-child(6) {
   background-image: url('../imgs-audio/horizontaal-illustraties/hz-6.png');
 
