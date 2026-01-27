@@ -14,8 +14,7 @@
         <div class="intro-content">
             <img src="imgs-audio/horizontaal-illustraties/titel.png" alt="Titel" class="title-image">
             <div class="nav-buttons">
-                <button onclick="showSection('video-page')">Bekijk Intro Video</button>
-                <button onclick="showSection('scrolly-page')">Direct naar Verhaal</button>
+                <button onclick="showSection('video-page')" style="padding: 20px 79px; border: none;">Start</button>
             </div>
         </div>
     </section>
@@ -51,30 +50,31 @@
             </div>
 
             <div class="slide slide-angst">
-                <div class="content">
-                    <button class="glow-button glow-button-pink" onclick="openModal('modal-one')"></button>
-                </div>
+
+                <button class="glow-button glow-button-pink" onclick="openModal('modal-one')"></button>
+
             </div>
 
             <div class="slide slide-keuken">
+                <img class="smoke-gif" src="imgs-audio/horizontaal-illustraties/smoke.gif" alt="Smoke">
                 <button class="glow-button glow-button-green-keuken" onclick="openModal('modal-four')"></button>
             </div>
 
             <div class="slide slide-was">
                 <img class="klok-gif" src="imgs-audio/horizontaal-illustraties/klok.gif" alt="Klok">
-                <div class="content">
-                    <button class="glow-button glow-button-pink-was" onclick="openModal('modal-two')"></button>
-                </div>
+                <button class="glow-button glow-button-pink-was" onclick="openModal('modal-two')"></button>
             </div>
 
             <div class="slide slide-studeerkamer">
                 <button class="glow-button glow-button-green-studeerkamer"
                     onclick="toggleAudio('zusjes-lied')"></button>
-                <img id="music-notes-gif" class="music-notes-animation" src="imgs-audio/vrdieping-studeerkamer/musicnotes.gif" alt="Music notes" style="display:none;">
+                <img id="music-notes-gif" class="music-notes-animation"
+                    src="imgs-audio/vrdieping-studeerkamer/musicnotes.gif" alt="Music notes" style="display:none;">
                 <button class="glow-button glow-button-pink-studeerkamer" onclick="openModal('modal-three')"></button>
             </div>
 
             <div class="slide slide-kolonie">
+                <img class="cat-gif" src="imgs-audio/horizontaal-illustraties/cat.gif" alt="Cat">
                 <div class="content">
                     <button class="glow-button glow-button-green" onclick="openVideoModal('modal-video')"></button>
                 </div>
@@ -310,7 +310,7 @@
     <div id="modal-four" class="modal hidden">
         <div class="modal-overlay" onclick="closeModal('modal-four')"></div>
         <div class="modal-content">
-  <img class="modal-swipe-icon" src="imgs-audio/swipe-vt.png" alt="Swipe to scroll">
+            <img class="modal-swipe-icon" src="imgs-audio/swipe-vt.png" alt="Swipe to scroll">
             <button class="modal-close" onclick="closeModal('modal-four')">✕</button>
             <div class="modal-body">
                 <!-- Text overlay positioned over first image -->

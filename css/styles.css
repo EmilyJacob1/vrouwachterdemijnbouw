@@ -104,8 +104,9 @@ button {
 .glow-button-green-keuken {
   background: #A2E6C6;
   animation: button-pulse-green 1.2s ease-in-out infinite;
-  margin-right: 55rem;
-  margin-top: 12rem;
+  position: absolute;
+top: 56%;
+    left: 25.5%;
   transition: background-color 0.3s ease;
   z-index: 100;
 }
@@ -201,10 +202,10 @@ button {
 }
 
 .birds-gif {
-    position: absolute;
-    top: 3%;
+position: absolute;
+    top: 7%;
     right: 10%;
-    width: 25rem;
+    width: 28rem;
     height: auto;
     pointer-events: none;
     z-index: 5;
@@ -233,6 +234,28 @@ button {
     width: 9rem;
     height: auto;
     transform: translate(-50%, 0);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.smoke-gif {
+position: absolute;
+    top: 36%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    width: 7rem;
+    height: auto;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.cat-gif {
+    position: absolute;
+    top: 77%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 19rem;
+    height: auto;
     pointer-events: none;
     z-index: 5;
 }
@@ -282,7 +305,7 @@ button {
   font-size: 1.5rem;
   cursor: pointer;
   background: #ffffff;
-  border: 1px solid #111;
+  border: none;
   color: #111;
   border-radius: 5px;
   transition: 0.2s ease;
@@ -306,7 +329,7 @@ button {
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: 10;
-  opacity: 0.2;
+  opacity: 0.25;
   mix-blend-mode: multiply;
 }
 
@@ -341,7 +364,6 @@ button {
   border-radius: 50px;
   backdrop-filter: blur(6px);
   z-index: 200;
-  border: 1px solid black;
 }
 
 .bottom-nav .dot {
@@ -400,7 +422,7 @@ button {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid #111;
+  border: none;
   cursor: pointer;
   box-shadow: none;
   transition: all 0.2s ease;
@@ -419,9 +441,11 @@ button {
 .glow-button-pink {
   background: #ffd9d1;
   animation: button-pulse 1.2s ease-in-out infinite;
-  margin-right: 52rem;
-  margin-top: 5rem;
+  position: absolute;
+    top: 52%;
+    left: 27%;
   transition: background-color 0.3s ease;
+  z-index: 100;
 }
 
 .glow-button-pink:hover {
@@ -433,9 +457,11 @@ button {
 .glow-button-pink-was {
   background: #ffd9d1;
   animation: button-pulse 1.2s ease-in-out infinite;
-  margin-right: 53rem;
-  margin-top: 8rem;
+  position: absolute;
+  top: 55%;
+  left: 20%;
   transition: background-color 0.3s ease;
+  z-index: 100;
 }
 
 .glow-button-pink-was:hover {
